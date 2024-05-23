@@ -1,0 +1,102 @@
+**Buliga Theodor Ioan**
+**323 CA**
+
+## PA - TEMA 1 - APROAPE FARA GIGEL
+
+### Descriere:
+
+* Tema isi propune sa rezolve problemele propuse.
+* Voi incepe cu problema numarul 2, respectiv Nostory, intrucat a fost
+prima abordata. Pentru primul task, doar sortez crescator listele, 
+iar apoi voi calcula suma facand maximul dintre primul element 
+dintr-o lista, cu ultimul element din cealalta lista(cea de-a doua
+fiind inversata). In schimb, pentru 
+cea de-a doua cerinta, am facut si mutarile propriu-zise. In prima faza, 
+interschimb elementele de pe aceleasi pozitii. Astfel, am pe intr-o 
+lista maximele de pe pozitiile initiale. Apoi, trebuie sa obtin o lista 
+care contine elementele maxime. Pentru asta, voi interschimba elementele 
+maxime din prima lista(care contine deja elementele maxime de pe pozitiile
+initiale), cu primele elemente din lista de minime
+(minimele din lista de minime de pe pozitiile initiale), in cazul in care
+sunt mai mari. Astfel, voi pastra maximele din lista de minime, care pot 
+depasi minimele din lista de maxime (in limita mutarilor). In final, 
+doar calculez suma, asemanator cu primul task. Complexitatea operatiilor 
+pentru primul task ar fi data de cele 2 sortari, respectiv inversarea listei, 
+deci ar fi maxim O(n ^ 2) + O(n ^ 2) + O(n / 2). Aici se adauga si O(n), 
+calcularea sumei. Pentru cel de-al doilea task ar fi maxim O(3 * n) pentru 
+calcularea listelor de minime si maxime, O(n ^ 2) + O(n ^ 2) sortarile. 
+La aceasta se adauga O(5 * mutari), avand 5 operatii la fiecare mutare, sau 
+O(n), daca ar fi o singura mutare care ar necesita un numar de pasi 
+egal cu lungimea listelor. La fel ca mai sus, suma ar avea complexitatea O(n), 
+mai precis teta(n).
+* Problema numarul 1, feribot, am rezolvat-o folosind un algoritm 
+de tip cautare binara. Voi cauta greutatea minima intre greutatea 
+maxima a masinilor si suma totala a greutatilor masinilor. Folosind cautare 
+binara, verific daca incap atatea masini pe numarul de feriboturi date. 
+Daca incap, cauta un numar mai mic, daca nu, caut un numar mai mare. 
+Complexitatea temporala aici ar fi O(n log n) in cel mai rau caz, 
+iar cea spatiala O(n).
+* Apoi, am rezolvat problema numarul 4, Semnale. Pentru ambele task-uri, 
+am folosit o matrice tridimensionala, cu cate o dimensiune pentru: 
+bitul in care se termina semnalul, numarul de 0-uri si numarul total 
+de biti. Calculez numarul de semnale, iterand prin 
+numarul total de biti, calculand la fiecare pas numarul de semnale 
+care se termina in 0, respectiv in 1. Numarul de semnale care se termina 
+in 0 e calculat adunand atat semnalele care se termina in 0 de la 
+pasul anterior, cat si numarul de semnale care se termina in 1 
+de la pasul anterior. Acum, pentru calcularea semnalelor care 
+se termina in 1 se schimba calculul in functie de task. Pentru 
+task-ul 1, numarul de semnale care se termina in 1 de la pasul 
+curent va fi numarul de semnale care se termina in 0 de la 
+pasul anterior, fiindca nu am voie sa am 2 biti de 1 alaturati. 
+Pentru task-ul 2, avand voie sa am 2 biti de 1 alaturati, voi 
+aduna numarul de semnale care se termina in 0 de la pasul anterior 
+cu numarul de semnale care se termina in 0 de acum 2 pasi. In 
+final, numarul total de semnale va fi suma dintre numarul de semnale 
+care se termina in 0 si numarul de semnale care se termina in 1 de la 
+ultima pozitie. Complexitatea temporala aici este data de calculul 
+numarului de  biti, respectiv O((numarul total de biti (nr de biti de 0 
++ numarul de biti de 1)) * numarul total de biti de 0). Cea spatiala 
+ar fi O(numarul total de biti * numarul de biti de 0 * 2). Generalizat, 
+temporal si spatial (O(n ^ 2)).
+* Ultima problema rezolvata a fost problema 3, Sushi. Inainte de a 
+elabora modul de rezolvare, vreau sa precizez ca am folosit rezolvarea 
+din laboratorul 03 de pe ocw 
+(https://ocw.cs.pub.ro/courses/pa/laboratoare/laborator-03), respectiv
+rezolvarea la problema rucsacului. Am adaptat-o pe cea din c++ la 
+java. Problema Sushi, se rezolva, practic, la fel ca problema rucsacului. 
+In loc de profit, voi avea suma notelor acordate. In loc de greutate, 
+voi avea pretul. Solutia este salvata intr-un tablou 
+bidimensional auxiliar la fiecare pas. O dimensiune este rezervata 
+platourilor, cealalta sumei disponibile. Calculez notele acordate 
+fiecarui platou. Iterez apoi printre toate platourile si toate preturile, 
+iar in functie de cat de mare este pretul care poate fi platit, verific 
+daca adaugarea solutiei este benefic sau nu(calcularea maximului). Pentru 
+task-ul 1, in cadrul iteratiei fac verificarea pentru adaugarea unui 
+singur platou. Pentru task-ul 2 verific daca se pot adauga doua platouri, 
+iar pentru cel de-al 3-lea task verific daca pot adauga doua platouri, 
+comandand in total n platouri, unde n e numarul de persoane. Complexitatea 
+este O(m * n * x) si spatial si temporal unde m e numarul de platouri, 
+n numarul de persoane, iar x este maximul care poate fi platit de fiecare 
+persoana.
+
+### Comentarii asupra temei:
+
+* Implementarile consider ca au fost bune si destul de eficiente, 
+intucat au trecut testele. Totusi, cred ca ar putea exista si mai bune, 
+pe masura ce imi dezvolt cunostintele in programare.
+* Am invatat mult mai bine sa folosesc conceptele programarii dinamice, 
+si per-total consider ca mi-am imbunatatit algoritmica.
+* A fost o tema interesanta, care mi-a placut, dar a fost si dificila in 
+ceea ce priveste stilul de gandire.
+
+### Resurse / Bibliografie:
+
+1. Laboratorele din cadrul materiei proiectarea algoritmilor:
+* In special laboratorul 03, de unde am preluat rezolvarea de la 
+problema rucsacului si am adaptat-o cerintelor din java: 
+https://ocw.cs.pub.ro/courses/pa/laboratoare/laborator-03
+2.https://just4once.gitbooks.io/leetcode-notes/content/leetcode/binary-search/410-split-array-largest-sum.html
+3.https://www.javatpoint.com/binary-strings-without-consecutive-ones-in-java
+4.https://math.stackexchange.com/questions/4616129/number-of-binary-strings-with-k-ones-or-k-zeros-and-no-three-consecutive-one
+5.https://www.geeksforgeeks.org/generate-binary-strings-without-consecutive-1s/
